@@ -6,7 +6,7 @@ Persoonlijk ontwikkelingsplan (POP) - opvolgingsdocument Academiejaar 2021-2022
 
 Student:	Robbe Dierickx
 
-Mentor:		<in te vullen door de mentor>
+Mentor:		Johan Donné
 
 =================================================================================
 Beschrijving - datum 26/09/2021
@@ -44,6 +44,7 @@ kerndoelen: 1.a, 2.a, 2.b, 6.e, 10.m
 Werkvormen: Via online tutorials leren hoe ik de verschillende tonen kan herkennen en hoe ik de communicatie opzet en hiermee te experimenteren.
 Deze kennis dan gebruiken om bijvoorbeeld met gebruik van Unity een applicatie te maken waarbij de technieken dan in een spel gezet kunnen worden.
 	
+<Johan Donné - voorstel goedgekeurd op 27/09/2021 />
 
 
 =================================================================================
