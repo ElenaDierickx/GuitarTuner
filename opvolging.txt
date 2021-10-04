@@ -47,11 +47,14 @@ Deze kennis dan gebruiken om bijvoorbeeld met gebruik van Unity een applicatie t
 
 
 =================================================================================
-Planning - <datum van eerste ingave> (op te stellen nadat je voorstel is goedgekeurd)
+Planning - 04/10/2021
 =================================================================================
 
-<Hou hier je werkplanning bij, op te stellen nadat je voorstel is goedgekeurd>
-
+- Week 3 - 6: Uitzoeken hoe ik de geluiden van de gitaar kan herkennen en dit testen en perfectioneren.
+- Week 6 - 8: Een UI en een level maken en de geluidsherkenning dan implementeren.
+- Week 8 - 10: Uitzoeken hoe ik 2 spelers kan laten verbinden en zo ze tegen elkaar kunnen laten spelen.
+- Week 9 - 11: De online functionaliteit implementeren.
+- Week 11 - 14: Een level editor maken en implementeren.
 
 =================================================================================
 Logboek
@@ -63,16 +66,6 @@ Zet voor elke nieuwe entry op een aparte lijn je naam en de datum.
 Als je dat wil, mag je de zuiver technische informatie in een aanvullend 'technisch logboek'
 bijhouden (binnen je repository). In dat geval kan je hier bij de verschillende entries verwijzen
 naar dat technisch logboek.>
-
-
-
-
-
-
-
-
-
-
 
 
 =================================================================================
