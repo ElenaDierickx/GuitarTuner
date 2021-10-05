@@ -1,0 +1,143 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\Presentation\\Presentation.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj",
+        "projectName": "LogicLayer",
+        "projectPath": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj",
+        "packagesPath": "C:\\Users\\Robbe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Robbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0-rc.1.21451.13, )"
+            },
+            "Microsoft.Toolkit.Mvvm": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "NAudio": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\Presentation\\Presentation.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\Presentation\\Presentation.csproj",
+        "projectName": "Presentation",
+        "projectPath": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\Presentation\\Presentation.csproj",
+        "packagesPath": "C:\\Users\\Robbe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\Presentation\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Robbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {
+              "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj": {
+                "projectPath": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
