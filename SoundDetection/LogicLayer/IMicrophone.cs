@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NAudio.Wave;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,7 @@ namespace LogicLayer
 {
     public interface IMicrophone
     {
+        public string getDevcount();
+        public double[] getFrequency();
     }
 }

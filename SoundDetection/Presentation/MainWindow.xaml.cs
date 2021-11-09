@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Presentation
 {
@@ -20,9 +21,12 @@ namespace Presentation
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainViewModel viewModel;
+        
         public MainWindow(MainViewModel vm)
         {
             DataContext = vm;
+            viewModel = DataContext as MainViewModel;
             InitializeComponent();
         }
     }

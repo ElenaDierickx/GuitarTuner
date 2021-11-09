@@ -6,7 +6,17 @@
         xmlns:local="clr-namespace:Presentation"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <DockPanel LastChildFill="true">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Devcount: "/>
+                <TextBlock Text="{Binding Devcount}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="FFT: "/>
+                <TextBlock Text="{Binding FFT}"/>
+            </StackPanel>
+        </StackPanel>
+        
+    </DockPanel>
 </Window>
