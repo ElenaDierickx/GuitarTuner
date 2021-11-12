@@ -23,7 +23,8 @@ namespace LogicLayer
         public Int32 envelopeMax;
 
         private int RATE = 44100;
-        private int BUFFERSIZE = (int)Math.Pow(2, 13);
+        //private int BUFFERSIZE = (int)Math.Pow(2, 13);
+        private int BUFFERSIZE = (int)Math.Pow(2, 11);
         private int devcount;
 
         public Microphone()
@@ -37,6 +38,7 @@ namespace LogicLayer
             wi.DataAvailable += new EventHandler<WaveInEventArgs>(wi_DataAvailable);
             bwp = new BufferedWaveProvider(wi.WaveFormat);
             bwp.BufferLength = BUFFERSIZE * 2;
+            wi.BufferMilliseconds = (int)((double)BUFFERSIZE / (double)RATE * 1000.0);
 
             bwp.DiscardOnBufferOverflow = true;
             wi.StartRecording();
@@ -91,7 +93,6 @@ namespace LogicLayer
             for (int i = 0; i < data.Length; i++)
             {
                 fft[i] = fftComplex[i].Magnitude; // back to double
-                //fft[i] = Math.Log10(fft[i]); // convert to dB
             }
             return fft;
         }

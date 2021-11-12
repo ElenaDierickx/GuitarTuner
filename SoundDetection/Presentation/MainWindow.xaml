@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Presentation"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" >
     <DockPanel LastChildFill="true">
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Devcount: "/>
-                <TextBlock Text="{Binding Devcount}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="FFT: "/>
+                <TextBlock Text="Strongest frequency: "/>
                 <TextBlock Text="{Binding FFT}"/>
             </StackPanel>
+
+            <Border Margin="10" BorderThickness="1" BorderBrush="Black" Width="1024" Height="600">
+                <Image Source="{Binding BitmapDisplay}" Stretch="None" Name="bitmapArea" Width="1024" Height="600" />
+            </Border>
         </StackPanel>
-        
+
     </DockPanel>
 </Window>
