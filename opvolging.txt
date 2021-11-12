@@ -61,13 +61,7 @@ Planning - 04/10/2021
 Logboek
 =================================================================================
 
-<Noteer hier je activiteiten, gevonden informatie, behaalde milestones, 
-belangrijke gebeurtenissen, problemen, oplossingen...
-Zet voor elke nieuwe entry op een aparte lijn je naam en de datum.
-Als je dat wil, mag je de zuiver technische informatie in een aanvullend 'technisch logboek'
-bijhouden (binnen je repository). In dat geval kan je hier bij de verschillende entries verwijzen
-naar dat technisch logboek.>
-
+- Het geluid dat opgenomen wordt door de micro komt live op het frequentiespectrum op een bitmap ook wordt de frequenctie met de grootste amplitude weergegeven.	Robbe Dierickx 12/11/2021
 
 
 
