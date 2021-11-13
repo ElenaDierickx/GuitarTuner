@@ -85,22 +85,22 @@ namespace Presentation
             while (true)
             {
                 double[] fftArray = microphone.getFrequency();
+                double[] halfArray = fftArray.Take(fftArray.Length / 2).ToArray();
                 double max = fftArray.Max();
-                double min = fftArray.Min();
                 int previous = 0;
                 if (max != 0)
                 {
-                    for(int i = 0; fftArray.Length > i; i++ )
+                    for(int i = 0; fftArray.Length / 2 > i; i++ )
                     {
+                        int scaled = (int)(fftArray[i] / 500 * (maxRow / 2 - 50));
                         for (int j = 0; maxRow > j; j++)
                         {
-                            int scaled = (int)(fftArray[i] / 500 * (maxRow / 2 - 50));
                             if (j == scaled)
                             {
                                 colorInts[maxRow - 1 - j, i] = BitConverter.ToInt32(new byte[] { 0, 0, 0, 255 });
-                                if(scaled > previous)
+                                if (scaled > previous)
                                 {
-                                    for(int x = previous; x < scaled; x++)
+                                    for (int x = previous; x < scaled; x++)
                                     {
                                         colorInts[maxRow - 1 - x, i] = BitConverter.ToInt32(new byte[] { 0, 0, 0, 255 });
                                     }
@@ -119,8 +119,9 @@ namespace Presentation
                             }
                         }
                     }
-                    int index = Array.IndexOf(fftArray, max);
-                    FFT = index * 21.533203125 * 2;
+                    int index = Array.IndexOf(halfArray, max);
+                    //FFT = index * 10.7666015625 * 2;
+                    FFT = index;
                 }
 
             }

@@ -1,10 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\SoundDetection",
-    "\\SoundDetection\\LogicLayer",
-    "\\SoundDetection\\Presentation"
+    ""
   ],
-  "SelectedNode": "\\SoundDetection\\Presentation\\MainViewModel.cs",
   "PreviewInSolutionExplorer": false
 }
