@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SoundDetection",
+    "\\SoundDetection\\Presentation"
   ],
   "PreviewInSolutionExplorer": false
 }
