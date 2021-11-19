@@ -1,0 +1,23 @@
+﻿<Window x:Class="Tuner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tuner"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel Orientation="Horizontal" >
+        <StackPanel Margin="0, 25, 0, 0">
+            <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToECommand}">E</Button>
+            <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToACommand}">A</Button>
+            <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToDCommand}">D</Button>
+            <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToGCommand}">G</Button>
+            <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToBCommand}">B</Button>
+            <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToeCommand}">e</Button>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Text="{Binding HigherLower}"/>
+        </StackPanel>
+    </StackPanel>
+    
+</Window>

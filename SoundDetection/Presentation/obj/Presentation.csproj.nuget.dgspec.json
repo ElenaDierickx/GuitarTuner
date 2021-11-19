@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\SoundDetection\\Presentation\\Presentation.csproj": {}
+    "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\Presentation\\Presentation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj": {
+    "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj",
         "projectName": "LogicLayer",
-        "projectPath": "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj",
+        "projectPath": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj",
         "packagesPath": "C:\\Users\\Robbe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\obj\\",
+        "outputPath": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -89,14 +89,14 @@
         }
       }
     },
-    "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\SoundDetection\\Presentation\\Presentation.csproj": {
+    "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\Presentation\\Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\SoundDetection\\Presentation\\Presentation.csproj",
+        "projectUniqueName": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\Presentation\\Presentation.csproj",
         "projectName": "Presentation",
-        "projectPath": "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\SoundDetection\\Presentation\\Presentation.csproj",
+        "projectPath": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\Presentation\\Presentation.csproj",
         "packagesPath": "C:\\Users\\Robbe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\SoundDetection\\Presentation\\obj\\",
+        "outputPath": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\Presentation\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -118,8 +118,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj": {
-                "projectPath": "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj"
+              "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj": {
+                "projectPath": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj"
               }
             }
           }

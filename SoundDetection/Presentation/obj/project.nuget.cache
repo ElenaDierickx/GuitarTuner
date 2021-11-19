@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SKv3VQnsd0OLEM1w60J6YY62X0Xfwuw5I6mYIA2uFqFKMBHNn28PR6P9BL1jSNI6NUyqHoYTTMuHO9sLVHIVTw==",
+  "dgSpecHash": "hTkCOcvRfA2JxPY3JSbvFOeH6bNQWJHP2CEVi1PMIEcjcmjEALWgftECr7lliB6ndorbTjpQ3wx7+yDiBG2bqw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\SoundDetection\\Presentation\\Presentation.csproj",
+  "projectFilePath": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\Presentation\\Presentation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Robbe\\.nuget\\packages\\accord\\3.8.0\\accord.3.8.0.nupkg.sha512",
     "C:\\Users\\Robbe\\.nuget\\packages\\accord.audio\\3.8.0\\accord.audio.3.8.0.nupkg.sha512",

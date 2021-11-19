@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8NrKZTCMbGDzUH0H/TyLM/HlWOY9JA6PgvjjQ4U7HSCN3kGZ6qbmDTg+OO/+2PMpDmmcYt83B2ggkhHUK7y1Lw==",
+  "dgSpecHash": "iKrUAf0CMg9hOJEEAMabvsJgshfDMe7+0079hZ+HRtXI8xKTqQfpTml+zNnnWqCf0/SLu13lZZAWU4EGSqVsUw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj",
+  "projectFilePath": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Robbe\\.nuget\\packages\\accord\\3.8.0\\accord.3.8.0.nupkg.sha512",
     "C:\\Users\\Robbe\\.nuget\\packages\\accord.audio\\3.8.0\\accord.audio.3.8.0.nupkg.sha512",
