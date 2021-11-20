@@ -92,7 +92,7 @@ namespace Presentation
                 {
                     for(int i = 0; fftArray.Length > i; i++ )
                     {
-                        int scaled = (int)(fftArray[i] / 500 * (maxRow / 2 - 50));
+                        int scaled = (int)(fftArray[i] / 250 * (maxRow / 2 - 50));
                         for (int j = 0; maxRow > j; j++)
                         {
                             if (j == scaled)
@@ -119,8 +119,16 @@ namespace Presentation
                             }
                         }
                     }
-                    int index = Array.IndexOf(fftArray, max);
-                    FFT = index * 10.7666015625 * 2;
+                    if(max > 10)
+                    {
+
+                        int index = Array.IndexOf(fftArray, max);
+                        FFT = index * 0.5859375;
+                    }
+                    else
+                    {
+                        FFT = 0;
+                    }
                 }
 
             }

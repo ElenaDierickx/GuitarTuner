@@ -22,7 +22,8 @@ namespace LogicLayer
         public BufferedWaveProvider bwp;
         public Int32 envelopeMax;
 
-        private int RATE = 44100;
+        //private int RATE = 44100;
+        private int RATE = 1200;
         //private int BUFFERSIZE = (int)Math.Pow(2, 13);
         private int BUFFERSIZE = (int)Math.Pow(2, 12);
         private int devcount;
@@ -38,7 +39,7 @@ namespace LogicLayer
             wi.DataAvailable += new EventHandler<WaveInEventArgs>(wi_DataAvailable);
             bwp = new BufferedWaveProvider(wi.WaveFormat);
             bwp.BufferLength = BUFFERSIZE * 2;
-            wi.BufferMilliseconds = (int)((double)BUFFERSIZE / (double)RATE * 1000.0);
+            //wi.BufferMilliseconds = (int)((double)BUFFERSIZE / (double)RATE * 1000.0);
 
             bwp.DiscardOnBufferOverflow = true;
             wi.StartRecording();

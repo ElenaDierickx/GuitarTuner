@@ -777,11 +777,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\GuitarTuner\\Tuner\\Tuner.csproj",
+      "projectUniqueName": "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\GuitarTuner\\Tuner\\Tuner.csproj",
       "projectName": "Tuner",
-      "projectPath": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\GuitarTuner\\Tuner\\Tuner.csproj",
+      "projectPath": "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\GuitarTuner\\Tuner\\Tuner.csproj",
       "packagesPath": "C:\\Users\\Robbe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\GuitarTuner\\Tuner\\obj\\",
+      "outputPath": "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\GuitarTuner\\Tuner\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -803,8 +803,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj": {
-              "projectPath": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj"
+            "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj": {
+              "projectPath": "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\SoundDetection\\LogicLayer\\LogicLayer.csproj"
             }
           }
         }

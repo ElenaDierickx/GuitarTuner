@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rDmaVoFyLFzaLQd8hm07mOEBAaPffLIdNKC9YGzxn1mPPBBJnK/vvgSQr0L3HEj/ZADyPRj1DvRr/vSv9y9qrg==",
+  "dgSpecHash": "xPsZhr1Offm6m2hIHQ2OFMxvL7guH+amj+MJ+SRDlnZpghU55EzEbfkQIWI5pctaJpsN0aoBAXyu/WQCBsGBHA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Robbe\\source\\repos\\2122pop-robbedierickx\\GuitarTuner\\Tuner\\Tuner.csproj",
+  "projectFilePath": "C:\\Users\\Robbe\\Source\\Repos\\2122pop-robbedierickx\\GuitarTuner\\Tuner\\Tuner.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Robbe\\.nuget\\packages\\accord\\3.8.0\\accord.3.8.0.nupkg.sha512",
     "C:\\Users\\Robbe\\.nuget\\packages\\accord.audio\\3.8.0\\accord.audio.3.8.0.nupkg.sha512",

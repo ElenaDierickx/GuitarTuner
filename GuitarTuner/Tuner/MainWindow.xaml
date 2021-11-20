@@ -16,7 +16,18 @@
             <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToeCommand}">e</Button>
         </StackPanel>
         <StackPanel>
-            <TextBlock Text="{Binding HigherLower}"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Frequency: "/>
+                <TextBlock Text="{Binding FFT}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Tuning: "/>
+                <TextBlock Text="{Binding Tuning}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Tuner: "/>
+                <TextBlock Text="{Binding HigherLower}"/>
+            </StackPanel>
         </StackPanel>
     </StackPanel>
     

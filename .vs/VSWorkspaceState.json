@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
     "",
+    "\\GuitarTuner",
+    "\\GuitarTuner\\Tuner",
     "\\SoundDetection"
   ],
   "PreviewInSolutionExplorer": false
