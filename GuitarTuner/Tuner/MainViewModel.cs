@@ -127,16 +127,39 @@ namespace Tuner
 
         private void GetFFT()
         {
+            bool rising = false;
             while (true)
             {
+                List<double> peaks = new List<double>();
                 double[] fftArray = microphone.getFrequency();
                 fftArray = fftArray.Take(fftArray.Length / 2).ToArray();
                 double max = fftArray.Max();
                 if (max != 0)
                 {
+                    for (int i = 0; fftArray.Length > i; i++)
+                    {
+                        int scaled = (int)(fftArray[i] / 15 * (fftArray.Length / 2 - 50));
+                        if (i > 100 && fftArray[i] > fftArray[i - 1])
+                        {
+                            rising = true;
+                        }
+                        else if (i > 100 && fftArray[i] < fftArray[i - 1] && rising)
+                        {
+                            rising = false;
+                            if (fftArray[i - 1] > 7)
+                            {
+                                double peakFrequency = (i - 1) * 0.5859375;
+                                peaks.Add(peakFrequency);
+                                peaks.Add(fftArray[i - 1]);
+                            }
+                        }
+                    }
                     int index = Array.IndexOf(fftArray, max);
-                    FFT = index * 0.9765625;
+                    if(peaks.Count() > 0) {
+                        FFT = peaks[0];
+                    }
                 }
+
 
             }
         }

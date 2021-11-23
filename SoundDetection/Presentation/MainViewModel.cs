@@ -98,7 +98,7 @@ namespace Presentation
         {
             while (true)
             {
-                List<double> peaks = new List<double>();
+                List<Peak> peaks = new List<Peak>();
                 double[] fftArray = microphone.getFrequency();
                 fftArray = fftArray.Take(fftArray.Length / 2).ToArray();
                 double max = fftArray.Max();
@@ -108,18 +108,17 @@ namespace Presentation
                 {
                     for(int i = 0; fftArray.Length > i; i++ )
                     {
-                        int scaled = (int)(fftArray[i] / 125 * (maxRow / 2 - 50));
-                        if(i > 100 && fftArray[i] > fftArray[i - 1])
+                        int scaled = (int)(fftArray[i] / 15 * (maxRow / 2 - 50));
+                        if(i > 0 && fftArray[i] > fftArray[i - 1])
                         {
                             rising = true;
-                        } else if(i > 100 && fftArray[i] < fftArray[i - 1] && rising)
+                        } else if(i > 0 && fftArray[i] < fftArray[i - 1] && rising)
                         {
                             rising = false;
-                            if(fftArray[i - 1] > 7)
+                            if(previous > 120)
                             {
-                                double peakFrequency = (i - 1) * 0.5859375;
-                                peaks.Add(peakFrequency);
-                                peaks.Add(fftArray[i - 1]);
+                                Peak peak = new Peak((i - 1) * 0.5859375, previous);
+                                peaks.Add(peak);
                             }
                         }
                         for (int j = 0; maxRow > j; j++)
@@ -157,7 +156,7 @@ namespace Presentation
                         FFT = index * 0.5859375;
                         if (peaks.Count > 0)
                         {
-                            FirstHarmonic = peaks[0];
+                            FirstHarmonic = peaks[0].Frequency;
                         }
                     }
                     else
