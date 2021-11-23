@@ -109,13 +109,13 @@ namespace Presentation
                     for(int i = 0; fftArray.Length > i; i++ )
                     {
                         int scaled = (int)(fftArray[i] / 125 * (maxRow / 2 - 50));
-                        if(i > 0 && fftArray[i] > fftArray[i - 1])
+                        if(i > 100 && fftArray[i] > fftArray[i - 1])
                         {
                             rising = true;
-                        } else if(i > 0 && fftArray[i] < fftArray[i - 1] && rising)
+                        } else if(i > 100 && fftArray[i] < fftArray[i - 1] && rising)
                         {
                             rising = false;
-                            if(fftArray[i - 1] > 25)
+                            if(fftArray[i - 1] > 7)
                             {
                                 double peakFrequency = (i - 1) * 0.5859375;
                                 peaks.Add(peakFrequency);
