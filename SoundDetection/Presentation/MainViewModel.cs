@@ -31,6 +31,20 @@ namespace Presentation
             }
         }
 
+        private double firstHarmonic;
+        public double FirstHarmonic
+        {
+            get { return firstHarmonic; }
+            set
+            {
+                if (firstHarmonic != value)
+                {
+                    firstHarmonic = value;
+                    OnPropertyChanged("FirstHarmonic");
+                }
+            }
+        }
+
         private string devcount;
         public string Devcount
         {
@@ -84,15 +98,30 @@ namespace Presentation
         {
             while (true)
             {
+                List<double> peaks = new List<double>();
                 double[] fftArray = microphone.getFrequency();
                 fftArray = fftArray.Take(fftArray.Length / 2).ToArray();
                 double max = fftArray.Max();
                 int previous = 0;
+                bool rising = false;
                 if (max != 0)
                 {
                     for(int i = 0; fftArray.Length > i; i++ )
                     {
-                        int scaled = (int)(fftArray[i] / 250 * (maxRow / 2 - 50));
+                        int scaled = (int)(fftArray[i] / 125 * (maxRow / 2 - 50));
+                        if(i > 0 && fftArray[i] > fftArray[i - 1])
+                        {
+                            rising = true;
+                        } else if(i > 0 && fftArray[i] < fftArray[i - 1] && rising)
+                        {
+                            rising = false;
+                            if(fftArray[i - 1] > 25)
+                            {
+                                double peakFrequency = (i - 1) * 0.5859375;
+                                peaks.Add(peakFrequency);
+                                peaks.Add(fftArray[i - 1]);
+                            }
+                        }
                         for (int j = 0; maxRow > j; j++)
                         {
                             if (j == scaled)
@@ -112,7 +141,9 @@ namespace Presentation
                                         colorInts[maxRow - 1 - x, i] = BitConverter.ToInt32(new byte[] { 0, 0, 0, 255 });
                                     }
                                 }
+
                                 previous = scaled;
+
                             } else
                             {
                                 colorInts[maxRow - 1 - j, i] = BitConverter.ToInt32(new byte[] { 255, 255, 255, 255 });
@@ -124,6 +155,10 @@ namespace Presentation
 
                         int index = Array.IndexOf(fftArray, max);
                         FFT = index * 0.5859375;
+                        if (peaks.Count > 0)
+                        {
+                            FirstHarmonic = peaks[0];
+                        }
                     }
                     else
                     {

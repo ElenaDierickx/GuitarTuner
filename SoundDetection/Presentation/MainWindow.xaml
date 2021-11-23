@@ -12,6 +12,10 @@
                 <TextBlock Text="Strongest frequency: "/>
                 <TextBlock Text="{Binding FFT}"/>
             </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="First Harmonic: "/>
+                <TextBlock Text="{Binding FirstHarmonic}"/>
+            </StackPanel>
 
             <Border Margin="10" BorderThickness="1" BorderBrush="Black" Width="1024" Height="600">
                 <Image Source="{Binding BitmapDisplay}" Stretch="None" Name="bitmapArea" Width="1024" Height="600" />
