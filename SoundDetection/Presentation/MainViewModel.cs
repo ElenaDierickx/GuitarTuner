@@ -106,7 +106,7 @@ namespace Presentation
                 bool rising = false;
                 if (max != 0)
                 {
-                    for(int i = 0; fftArray.Length > i; i++ )
+                    for(int i = 0; 1024 > i; i++ )
                     {
                         int scaled = (int)(fftArray[i] / 15 * (maxRow / 2 - 50));
                         if(i > 0 && fftArray[i] > fftArray[i - 1])
@@ -154,10 +154,6 @@ namespace Presentation
 
                         int index = Array.IndexOf(fftArray, max);
                         FFT = index * 0.5859375;
-                        //if (peaks.Count > 0)
-                        //{
-                        //    FirstHarmonic = peaks[0].Frequency;
-                        //}
 
                         //Implement Harmonic Product Spectrum
                         int fund_freq = 0;
@@ -173,7 +169,7 @@ namespace Presentation
                                 fund_freq = k;
                             }
                         }
-                        FirstHarmonic = fund_freq * 8000 / 2048.0;
+                        FirstHarmonic = fund_freq * 8000 / 16384.0;
 
                     }
                     else

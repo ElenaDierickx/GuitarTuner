@@ -130,34 +130,25 @@ namespace Tuner
             bool rising = false;
             while (true)
             {
-                List<double> peaks = new List<double>();
+
                 double[] fftArray = microphone.getFrequency();
-                fftArray = fftArray.Take(fftArray.Length / 2).ToArray();
                 double max = fftArray.Max();
                 if (max != 0)
                 {
-                    for (int i = 0; fftArray.Length > i; i++)
+                    int fund_freq = 0;
+                    double[] sum = new double[fftArray.Length / 8];
+                    double max_value2 = max;
+                    for (int k = 0; k < fftArray.Length / 8; k++)
                     {
-                        int scaled = (int)(fftArray[i] / 15 * (fftArray.Length / 2 - 50));
-                        if (i > 100 && fftArray[i] > fftArray[i - 1])
+                        sum[k] = fftArray[k] * fftArray[2 * k] * fftArray[3 * k];
+                        // find fundamental frequency (maximum value in plot)
+                        if (sum[k] > max_value2 && k > 0)
                         {
-                            rising = true;
-                        }
-                        else if (i > 100 && fftArray[i] < fftArray[i - 1] && rising)
-                        {
-                            rising = false;
-                            if (fftArray[i - 1] > 7)
-                            {
-                                double peakFrequency = (i - 1) * 0.5859375;
-                                peaks.Add(peakFrequency);
-                                peaks.Add(fftArray[i - 1]);
-                            }
+                            max_value2 = sum[k];
+                            fund_freq = k;
                         }
                     }
-                    int index = Array.IndexOf(fftArray, max);
-                    if(peaks.Count() > 0) {
-                        FFT = peaks[0];
-                    }
+                    FFT = fund_freq * 8000 / 16384.0;
                 }
 
 

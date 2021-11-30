@@ -25,7 +25,7 @@ namespace LogicLayer
         private int RATE = 8000;
         //private int RATE = 1200;
         //private int BUFFERSIZE = (int)Math.Pow(2, 13);
-        private int BUFFERSIZE = (int)Math.Pow(2, 12);
+        private int BUFFERSIZE = (int)Math.Pow(2, 15);
         private int devcount;
 
         public Microphone()
