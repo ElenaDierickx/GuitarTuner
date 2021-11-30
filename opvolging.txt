@@ -63,7 +63,7 @@ Logboek
 
 - Het geluid dat opgenomen wordt door de micro komt live op het frequentiespectrum op een bitmap ook wordt de frequenctie met de grootste amplitude weergegeven.	Robbe Dierickx 12/11/2021
 - Er is een duidelijke weergave van het frequentiespectrum voor de range van een gitaar. Robbe Dierickx 20/11/2021 
-
+- Het is gelukt om de fundamentele frequetie weer te geven als er een snaar gespeeld wordt op een gitaar. Robbe Dierickx 30/11/2021
 
 
 
