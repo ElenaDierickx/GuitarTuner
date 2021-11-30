@@ -154,10 +154,27 @@ namespace Presentation
 
                         int index = Array.IndexOf(fftArray, max);
                         FFT = index * 0.5859375;
-                        if (peaks.Count > 0)
+                        //if (peaks.Count > 0)
+                        //{
+                        //    FirstHarmonic = peaks[0].Frequency;
+                        //}
+
+                        //Implement Harmonic Product Spectrum
+                        int fund_freq = 0;
+                        double[] sum = new double[fftArray.Length / 8];
+                        double max_value2 = max;
+                        for (int k = 0; k < fftArray.Length / 8; k++)
                         {
-                            FirstHarmonic = peaks[0].Frequency;
+                            sum[k] = fftArray[k] * fftArray[2 * k] * fftArray[3 * k];
+                            // find fundamental frequency (maximum value in plot)
+                            if (sum[k] > max_value2 && k > 0)
+                            {
+                                max_value2 = sum[k];
+                                fund_freq = k;
+                            }
                         }
+                        FirstHarmonic = fund_freq * 8000 / 2048.0;
+
                     }
                     else
                     {

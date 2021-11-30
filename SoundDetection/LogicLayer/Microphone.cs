@@ -22,8 +22,8 @@ namespace LogicLayer
         public BufferedWaveProvider bwp;
         public Int32 envelopeMax;
 
-        //private int RATE = 44100;
-        private int RATE = 1200;
+        private int RATE = 8000;
+        //private int RATE = 1200;
         //private int BUFFERSIZE = (int)Math.Pow(2, 13);
         private int BUFFERSIZE = (int)Math.Pow(2, 12);
         private int devcount;
