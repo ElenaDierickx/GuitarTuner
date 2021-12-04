@@ -74,25 +74,36 @@ Logboek
 
 
 =================================================================================
-Eerste tussenrapportering - <datum van ingave>
+Eerste tussenrapportering - 04/12/2021
 =================================================================================
 
 Stand van zaken:
 
-<Geef hier een korte stand van zaken van wat er gebeurd is sinds de start: 
-Wat is er gerealiseerd? Wat moet nog gebeuren? Wat zijn bijzondere gebeurtenissen?
-Wat zijn problemen die je nog moet oplossen?>
+    - Met behulp van Fast Fouriertransformatie is het gelukt om het frequentiespectrum weer te geven in een bitmap.
+    - Na veel experimenteren en opzoekwerk lukt het nu om de fundamentele frequentie te berekenen.
+    - Met de fundamentele frequentie kan er al veel gedaan worden, zoals de simpele gitaartuner en de open snaar herkenning die gemaakt is.
+    - Het lukt nog niet om alle frets op de snaren te herkennen omdat ik tot de realisatie ben gekomen dat er verschillende frets zijn met dezelfde
+    fundamentele frequentie, hiervoor zal ik nog wat moeten experimenteren.
+    - Ik zou ook graag nog een meer geavanceerde gitaarstemmer maken.
 
 Reflectie:
 
-<Hoe werkt je aanpak? Waar had je achteraf gezien beter anders te werk kunnen gaan?
-Hoe ga je eventueel bijsturen? Welke aanpassingen zijn er nodig in je planning?>
+    Na de uitleg over Fouriertransformatie lukte het om aan de slag te gaan. Al snel kon er begonnen worden experimenteren en
+    informatie weer te geven op het scherm. Ik heb wel wat lang zitten experimenteren om het te begrijpen en ik heb lang nodig
+    gehad om te zoeken naar een manier om de fundamentele frequentie weer te geven. Het was hiervoor moeilijk om iets deftig van frequentie
+    weer te geven omdat er meerdere pieken waren en lagere frequenties een lagere amplitude hebben. Eerst probeerde ik de pieken te herkennen
+    maar na lang dit te proberen had ik door dat ik op het verkeerde spoor zat. Toen ik dit door had en een andere manier probeerde ging het al
+    veel sneller. Ik moet dus sneller meerdere manieren proberen in plaats van op een iets te focusen.
 
 
 Zelfevaluatie:
 
-<Geef jezelf hier een score (gaande van 'NVT' tot 'A') voor de items die in het 
-evaluatiedocument een witte achtergrond hebben>
+    - nieuw verworven kennis: B
+    - toepassing aangetoond: C
+    - planning: E
+    - initiatief - inzet: C
+    - rapportering: C
+
 
 
 Feedback vanwege mentor - <datum van ingave>:
