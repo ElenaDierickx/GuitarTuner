@@ -6,11 +6,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Tuner
 {
     public class MainViewModel : ObservableObject
     {
+        private int maxRow = 350;
+        private int maxColumn = 630;
         public IRelayCommand ToECommand { get; private set; }
         public IRelayCommand ToACommand { get; private set; }
         public IRelayCommand ToDCommand { get; private set; }
@@ -65,9 +70,13 @@ namespace Tuner
         private double achieveFrequency;
 
         private readonly IMicrophone microphone;
+
+        public WriteableBitmap BitmapDisplay { get; private set; }
+
         public MainViewModel(IMicrophone microphone)
         {
             this.microphone = microphone;
+            CreateBitmap();
             ToECommand = new RelayCommand(ToE);
             ToACommand = new RelayCommand(ToA);
             ToDCommand = new RelayCommand(ToD);
@@ -78,6 +87,43 @@ namespace Tuner
 
             Task.Run(GetFFT);
         }
+
+        private void CreateBitmap()
+        {
+            double dpiX = 96d;
+            double dpiY = 96d;
+            var pixelFormat = PixelFormats.Pbgra32;
+            BitmapDisplay = new WriteableBitmap(maxColumn, maxRow, dpiX, dpiY, pixelFormat, null);
+            OnPropertyChanged(nameof(BitmapDisplay));
+            CompositionTarget.Rendering += DrawTuner;
+        }
+
+        private void DrawTuner(object sender, EventArgs e)
+        {
+            Int32Rect rectangle = new Int32Rect(0, 0, maxColumn, maxRow);
+            int[,] colorInts = new int[maxRow, maxColumn];
+            int halfline = maxColumn / 2;
+            int scaled = (int)(FFT / achieveFrequency * 315);
+            for (int x = 0; x < maxColumn; x++) 
+            { 
+                for(int y = 0; y < maxRow; y++)
+                {
+                    if(halfline == x)
+                    {
+                        colorInts[y, x] = BitConverter.ToInt32(new byte[] { 0, 0, 0, 255 });
+                    }
+                    if (scaled == x && scaled > 1 && scaled < maxColumn - 1)
+                    {
+                        colorInts[y, x] = BitConverter.ToInt32(new byte[] { 0, 0, 255, 255 });
+                        colorInts[y, x + 1] = BitConverter.ToInt32(new byte[] { 0, 0, 255, 255 });
+                        colorInts[y, x - 1] = BitConverter.ToInt32(new byte[] { 0, 0, 255, 255 });
+                    }
+                }
+            }
+
+            BitmapDisplay.WritePixels(rectangle, colorInts, BitmapDisplay.BackBufferStride, 0, 0);
+        }
+
         private void ToE()
         {
             achieveFrequency = 82.41;
@@ -111,7 +157,7 @@ namespace Tuner
 
         private void CheckFrequency()
         {
-            if(FFT < achieveFrequency - 1)
+            if (FFT < achieveFrequency - 1)
             {
                 HigherLower = "Higher";
             }
@@ -127,7 +173,6 @@ namespace Tuner
 
         private void GetFFT()
         {
-            bool rising = false;
             while (true)
             {
 
