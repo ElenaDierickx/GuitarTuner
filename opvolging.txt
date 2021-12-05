@@ -106,39 +106,27 @@ Zelfevaluatie:
 
 
 
-Feedback vanwege mentor - <datum van ingave>:
+Feedback vanwege mentor - 5/12/2021:
 (Laat steeds de feedback van de mentor in het opvolgingsdocument staan tot het einde
 van het opleidingsonderdeel.) 
 
-<Hier komt de feedback en opmerkingen vanwege de mentor>
+Robin
 
+Je hebt ondertussen duidelijk al heel wat nieuw inzicht in het werken met het frequentiespectrum en de technische aspecten van gitaarklanken.
+Ik kan me inderdaad wel voorstellen dat het ook dan nog niet zo eenvoudig is om op basis van het spectrum vanuit je code te beoordelen welke snaar met welke fret aangeslagen wordt. En het lijkt me zeker moeilijk om voor een bepaalde fundamentele frequentie te achterhalen met welke snaar/fret combinatie die gegenereerd is (dan moet je wss naar subtiele verschillen in de harmonischen gaan kijken). 
+Het lijkt me in elk geval wel boeiend en technisch zeker niet eenvoudig.
 
+Op basis van je stand van zaken nu, zou ik durven voorstellen om je doelstelllingen wat aan te passen:
+- Afstappen van het idee om een dual player 'Guitar Hero' te ontwikkelen.
+- In de plaast gaan voor de geavanceerde stemmer.
+- Eventueel aangevuld met een toepassing om akkoorden te leren spelen waarbij je toepassing akkoorden 'herkent' en kan aangeven of ze goed gespeeld zijn (en mss zelfs waar de vingerzetting fout is).
 
-=================================================================================
-(optioneel) Tweede tussenrapportering - <datum van ingave>
-=================================================================================
+Bedenk zelf gerust of je dat een goed idee vindt.
 
-Stand van zaken:
+Veel succes met het verder verloop en contacteer me zeker met eventuele vragen of problemen!
 
-<Geef hier een korte stand van zaken van wat er gebeurd is sinds vorige tussenrapportering: 
-Wat is er gerealiseerd? Wat moet nog gebeuren? Wat zijn bijzondere gebeurtenissen?
-Wat zijn problemen die je nog moet oplossen?>
+Johan
 
-Reflectie:
-
-<Hoe werkt je aanpak? Waar had je achteraf gezien beter anders te werk kunnen gaan?
-Hebben vroegere bijsturingen het gewenste effect? Wat wil je nog wijzigen in je aanpak of planning?>
-
-
-Zelfevaluatie:
-
-<Geef jezelf hier een score (gaande van 'NVT' tot 'A') voor de items die in het 
-evaluatiedocument een witte achtergrond hebben>
-
-
-Feedback vanwege mentor - <datum van ingave>:
-
-<Hier komt de feedback en opmerkingen vanwege de mentor>
 
 
 
