@@ -25,7 +25,6 @@ namespace GuitarBuddy
         {
             services.AddTransient<MainViewModel>();
             services.AddSingleton<MainWindow>();
-            services.AddSingleton<Tuner>();
             services.AddTransient<IMicrophone, Microphone>();
         }
 

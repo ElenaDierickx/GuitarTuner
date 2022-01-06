@@ -11,8 +11,8 @@
             <TextBlock HorizontalAlignment="Center" FontSize="50" FontWeight="DemiBold" >Guitarbuddy</TextBlock>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 0">
                 <Button Margin="15 0 15 0" Height="30" Width="100" Command="{Binding ToTunerCommand}">Tuner</Button>
-                <Button Margin="15 0 15 0" Height="30" Width="100" Command="{Binding ToNoteCommand}">Note recognizer</Button>
-                <Button Margin="15 0 15 0" Height="30" Width="100" Command="{Binding ToFFTCommand}">FFT Spectrum</Button>
+                <Button Margin="15 0 15 0" Height="30" Width="100" Command="{Binding ToNotesCommand}">Note recognizer</Button>
+                <Button Margin="15 0 15 0" Height="30" Width="100" Command="{Binding ToSpectrumCommand}">FFT Spectrum</Button>
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuitarBuddy", "GuitarBuddy\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicLayer", "..\SoundDetection\LogicLayer\LogicLayer.csproj", "{758B244F-ECE5-4F3D-8988-CE047664E53C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fretboard", "..\GuitarDetection\Fretboard\Fretboard.csproj", "{8EB7A98C-7B5D-4076-8C37-5051EAC8F753}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{758B244F-ECE5-4F3D-8988-CE047664E53C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{758B244F-ECE5-4F3D-8988-CE047664E53C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{758B244F-ECE5-4F3D-8988-CE047664E53C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EB7A98C-7B5D-4076-8C37-5051EAC8F753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EB7A98C-7B5D-4076-8C37-5051EAC8F753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EB7A98C-7B5D-4076-8C37-5051EAC8F753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EB7A98C-7B5D-4076-8C37-5051EAC8F753}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

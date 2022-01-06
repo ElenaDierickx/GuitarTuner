@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\GuitarDetection\Fretboard\Fretboard.csproj" />
     <ProjectReference Include="..\..\SoundDetection\LogicLayer\LogicLayer.csproj" />
   </ItemGroup>
 
