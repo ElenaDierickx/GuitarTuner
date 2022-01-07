@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
@@ -31,16 +32,16 @@ namespace GuitarBuddy
             }
         }
 
-        private double firstHarmonic;
-        public double FirstHarmonic
+        private double fundamental;
+        public double Fundamental
         {
-            get { return firstHarmonic; }
+            get { return fundamental; }
             set
             {
-                if (firstHarmonic != value)
+                if (fundamental != value)
                 {
-                    firstHarmonic = value;
-                    OnPropertyChanged("FirstHarmonic");
+                    fundamental = value;
+                    OnPropertyChanged("Fundamental");
                 }
             }
         }
@@ -61,23 +62,32 @@ namespace GuitarBuddy
 
         public WriteableBitmap BitmapDisplay { get; private set; }
 
-        public IRelayCommand GetFFTCommand { get; private set; }
+        public IRelayCommand StopCommand { get; private set; }
 
         private readonly IMicrophone microphone;
 
         private Int32Rect rectangle;
         private int[,] colorInts;
+
+        CancellationTokenSource tokenSource;
         public SpectrumViewModel(IMicrophone microphone)
         {
             this.microphone = microphone;
             Devcount = microphone.getDevcount();
             CreateBitmap();
-
+            StopCommand = new RelayCommand(StopTask);
             rectangle = new Int32Rect(0, 0, maxColumn, maxRow);
             colorInts = new int[maxRow, maxColumn];
-            Task.Run(GetFFT);
+
+            tokenSource = new CancellationTokenSource();
+            Task.Run(GetFFT, tokenSource.Token);
             CompositionTarget.Rendering += DrawFFT;
 
+        }
+
+        private void StopTask()
+        {
+            tokenSource.Cancel();
         }
 
         private void CreateBitmap()
@@ -96,32 +106,19 @@ namespace GuitarBuddy
 
         private void GetFFT()
         {
-            while (true)
+
+            CancellationToken ct = tokenSource.Token;
+            while (!ct.IsCancellationRequested)
             {
-                List<Peak> peaks = new List<Peak>();
                 double[] fftArray = microphone.getFrequency();
                 fftArray = fftArray.Take(fftArray.Length / 2).ToArray();
                 double max = fftArray.Max();
                 int previous = 0;
-                bool rising = false;
                 if (max != 0)
                 {
                     for (int i = 0; 1024 > i; i++)
                     {
                         int scaled = (int)(fftArray[i] / 15 * (maxRow / 2 - 50));
-                        if (i > 0 && fftArray[i] > fftArray[i - 1])
-                        {
-                            rising = true;
-                        }
-                        else if (i > 0 && fftArray[i] < fftArray[i - 1] && rising)
-                        {
-                            rising = false;
-                            if (previous > 120)
-                            {
-                                Peak peak = new Peak((i - 1) * 0.5859375, previous);
-                                peaks.Add(peak);
-                            }
-                        }
                         for (int j = 0; maxRow > j; j++)
                         {
                             if (j == scaled)
@@ -151,33 +148,22 @@ namespace GuitarBuddy
                             }
                         }
                     }
-                    if (max > 10)
+                    int index = Array.IndexOf(fftArray, max);
+                    FFT = index * 0.5859375;
+                    int fund_freq = 0;
+                    double[] sum = new double[fftArray.Length / 8];
+                    double max_value2 = max;
+                    for (int k = 0; k < fftArray.Length / 8; k++)
                     {
-
-                        int index = Array.IndexOf(fftArray, max);
-                        FFT = index * 0.5859375;
-
-                        //Implement Harmonic Product Spectrum
-                        int fund_freq = 0;
-                        double[] sum = new double[fftArray.Length / 8];
-                        double max_value2 = max;
-                        for (int k = 0; k < fftArray.Length / 8; k++)
+                        sum[k] = fftArray[k] * fftArray[2 * k] * fftArray[3 * k];
+                        // find fundamental frequency (maximum value in plot)
+                        if (sum[k] > max_value2 && k > 0)
                         {
-                            sum[k] = fftArray[k] * fftArray[2 * k] * fftArray[3 * k];
-                            // find fundamental frequency (maximum value in plot)
-                            if (sum[k] > max_value2 && k > 0)
-                            {
-                                max_value2 = sum[k];
-                                fund_freq = k;
-                            }
+                            max_value2 = sum[k];
+                            fund_freq = k;
                         }
-                        FirstHarmonic = fund_freq * 8000 / 16384.0;
-
                     }
-                    else
-                    {
-                        FFT = 0;
-                    }
+                    Fundamental = fund_freq * 8000 / 16384.0;
                 }
 
             }

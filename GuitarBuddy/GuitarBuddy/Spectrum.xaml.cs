@@ -19,10 +19,20 @@ namespace GuitarBuddy
     /// </summary>
     public partial class Spectrum : Window
     {
+        private SpectrumViewModel viewModel;
+
         public Spectrum(SpectrumViewModel vm)
         {
             DataContext = vm;
+            viewModel = DataContext as SpectrumViewModel;
             InitializeComponent();
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+
+            viewModel.StopCommand.Execute(null);
         }
     }
 }

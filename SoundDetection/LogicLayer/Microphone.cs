@@ -33,13 +33,12 @@ namespace LogicLayer
             devcount = WaveIn.DeviceCount;
 
             WaveIn wi = new WaveIn();
-            wi.DeviceNumber = 0;
+            wi.DeviceNumber = 1;
             wi.WaveFormat = new WaveFormat(RATE, 1);
 
             wi.DataAvailable += new EventHandler<WaveInEventArgs>(wi_DataAvailable);
             bwp = new BufferedWaveProvider(wi.WaveFormat);
             bwp.BufferLength = BUFFERSIZE * 2;
-            //wi.BufferMilliseconds = (int)((double)BUFFERSIZE / (double)RATE * 1000.0);
 
             bwp.DiscardOnBufferOverflow = true;
             wi.StartRecording();

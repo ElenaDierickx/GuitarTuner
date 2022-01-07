@@ -26,5 +26,11 @@ namespace GuitarBuddy
             viewModel = DataContext as TunerViewModel;
             InitializeComponent();
         }
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+
+            viewModel.StopCommand.Execute(null);
+        }
     }
 }

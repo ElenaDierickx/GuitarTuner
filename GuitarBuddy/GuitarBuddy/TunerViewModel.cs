@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
@@ -22,6 +23,8 @@ namespace GuitarBuddy
         public IRelayCommand ToGCommand { get; private set; }
         public IRelayCommand ToBCommand { get; private set; }
         public IRelayCommand ToeCommand { get; private set; }
+
+        public IRelayCommand StopCommand { get; private set; }
 
         private string tuning;
         public string Tuning
@@ -72,6 +75,7 @@ namespace GuitarBuddy
         private readonly IMicrophone microphone;
 
         public WriteableBitmap BitmapDisplay { get; private set; }
+        CancellationTokenSource tokenSource;
 
         public TunerViewModel(IMicrophone microphone)
         {
@@ -83,9 +87,16 @@ namespace GuitarBuddy
             ToGCommand = new RelayCommand(ToG);
             ToBCommand = new RelayCommand(ToB);
             ToeCommand = new RelayCommand(Toe);
+            StopCommand = new RelayCommand(StopFFT);
             ToE();
 
-            Task.Run(GetFFT);
+            tokenSource = new CancellationTokenSource();
+            Task.Run(GetFFT, tokenSource.Token);
+        }
+
+        private void StopFFT()
+        {
+            tokenSource.Cancel();
         }
 
         private void CreateBitmap()
@@ -173,7 +184,8 @@ namespace GuitarBuddy
 
         private void GetFFT()
         {
-            while (true)
+            CancellationToken ct = tokenSource.Token;
+            while (!ct.IsCancellationRequested)
             {
 
                 double[] fftArray = microphone.getFrequency();

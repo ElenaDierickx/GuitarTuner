@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:GuitarBuddy"
         mc:Ignorable="d"
         Title="NoteRecognizer" Height="450" Width="800">
-    <Grid>
-        <TextBlock FontSize="80" Text="String:"/>
-        <TextBlock Margin="230 0 0 0" FontSize="80" Text="{Binding Fret}"/>
-    </Grid>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+        <TextBlock FontSize="80" Text="Note:"/>
+        <TextBlock Margin="230 0 0 0" FontSize="80" Text="{Binding Note}"/>
+    </StackPanel>
 </Window>

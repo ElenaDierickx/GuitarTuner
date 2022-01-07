@@ -19,10 +19,19 @@ namespace GuitarBuddy
     /// </summary>
     public partial class NoteRecognizer : Window
     {
+        NoteRecognizerViewModel viewModel;
         public NoteRecognizer(NoteRecognizerViewModel vm)
         {
             DataContext = vm;
+            viewModel = DataContext as NoteRecognizerViewModel;
             InitializeComponent();
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+
+            viewModel.StopCommand.Execute(null);
         }
     }
 }

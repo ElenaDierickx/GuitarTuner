@@ -38,6 +38,7 @@ namespace GuitarBuddy
             SpectrumViewModel vm = new(microphone);
             Spectrum spectrum = new(vm);
             spectrum.ShowDialog();
+            
         }
 
         private void ToNotes()

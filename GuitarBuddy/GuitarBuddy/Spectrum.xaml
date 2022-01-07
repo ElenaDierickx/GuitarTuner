@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GuitarBuddy"
         mc:Ignorable="d"
-        Title="Spectrum" Height="667" Width="1077">
+        Title="Spectrum" Height="690" Width="1077">
     <DockPanel LastChildFill="true">
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
@@ -13,8 +13,8 @@
                 <TextBlock Text="{Binding FFT}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="First Harmonic: "/>
-                <TextBlock Text="{Binding FirstHarmonic}"/>
+                <TextBlock Text="Fundamental Frequency: "/>
+                <TextBlock Text="{Binding Fundamental}"/>
             </StackPanel>
 
             <Border Margin="10" BorderThickness="1" BorderBrush="Black" Width="1024" Height="600">

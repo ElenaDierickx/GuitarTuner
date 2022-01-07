@@ -1,41 +1,57 @@
 ﻿using Fretboard;
 using LogicLayer;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GuitarBuddy
 {
     public class NoteRecognizerViewModel : ObservableObject
     {
-        private string fret;
-        public string Fret
+        private string note;
+        public string Note
         {
-            get { return fret; }
+            get { return note; }
             set
             {
-                if (fret != value)
+                if (note != value)
                 {
-                    fret = value;
-                    OnPropertyChanged("Fret");
+                    note = value;
+                    OnPropertyChanged("Note");
                 }
             }
         }
+
+        public IRelayCommand StopCommand { get; private set; }
+
+        CancellationTokenSource tokenSource;
 
         private readonly IMicrophone microphone;
         public NoteRecognizerViewModel(IMicrophone microphone)
         {
             this.microphone = microphone;
-            Task.Run(GetFFT);
+
+            StopCommand = new RelayCommand(StopFFT);
+
+            tokenSource = new CancellationTokenSource();
+            Task.Run(GetFFT, tokenSource.Token);
+        }
+
+        private void StopFFT()
+        {
+            tokenSource.Cancel();
         }
 
         private void GetFFT()
         {
+            CancellationToken ct = tokenSource.Token;
             double freq;
-            while (true)
+            while (!ct.IsCancellationRequested)
             {
 
                 double[] fftArray = microphone.getFrequency();
@@ -56,7 +72,7 @@ namespace GuitarBuddy
                         }
                     }
                     freq = fund_freq * 8000 / 16384.0;
-                    Fret = Frets.getString(freq);
+                    Note = Frets.getNote(freq);
                 }
 
 
