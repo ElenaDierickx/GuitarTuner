@@ -33,7 +33,7 @@ namespace LogicLayer
             devcount = WaveIn.DeviceCount;
 
             WaveIn wi = new WaveIn();
-            wi.DeviceNumber = 1;
+            wi.DeviceNumber = 0;
             wi.WaveFormat = new WaveFormat(RATE, 1);
 
             wi.DataAvailable += new EventHandler<WaveInEventArgs>(wi_DataAvailable);
@@ -92,7 +92,14 @@ namespace LogicLayer
             Accord.Math.FourierTransform.FFT(fftComplex, Accord.Math.FourierTransform.Direction.Forward);
             for (int i = 0; i < data.Length; i++)
             {
-                fft[i] = fftComplex[i].Magnitude; // back to double
+                if(i < 30)
+                {
+                    fft[i] = 0.0;
+                } else
+                {
+                    fft[i] = fftComplex[i].Magnitude; // back to double
+                }
+                
             }
             return fft;
         }
