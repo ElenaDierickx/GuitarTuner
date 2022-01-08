@@ -5,15 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GuitarBuddy"
         mc:Ignorable="d"
-        Title="Tuner" Height="470" Width="810">
+        Title="Tuner" Height="490" Width="810">
     <StackPanel Orientation="Horizontal" >
-        <StackPanel Margin="0, 25, 0, 0">
-            <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToECommand}">E</Button>
-            <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToACommand}">A</Button>
-            <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToDCommand}">D</Button>
-            <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToGCommand}">G</Button>
-            <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToBCommand}">B</Button>
-            <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToeCommand}">e</Button>
+        <StackPanel Margin="0, 0, 0, 0">
+            <StackPanel Margin="0 0 0 10">
+                <Label>Tuning:</Label>
+                <ComboBox Name="Tunings" Width="130"  ItemsSource="{Binding Tunings}" SelectedItem="{Binding Tuning}" IsSynchronizedWithCurrentItem="True"/>
+            </StackPanel>
+
+            <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToFirstCommand}" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="String 6: "></TextBlock>
+                    <TextBlock Text="{Binding Tuning.Notes[0]}"></TextBlock>
+                </StackPanel>
+            </Button>
+             <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToSecondCommand}">
+                 <StackPanel Orientation="Horizontal">
+                     <TextBlock Text="String 5: "></TextBlock>
+                     <TextBlock Text="{Binding Tuning.Notes[1]}"></TextBlock>
+                 </StackPanel>
+            </Button>
+            <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToThirdCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="String 4: "></TextBlock>
+                    <TextBlock Text="{Binding Tuning.Notes[2]}"></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToFourthCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="String 3: "></TextBlock>
+                    <TextBlock Text="{Binding Tuning.Notes[3]}"></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToFifthCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="String 2: "></TextBlock>
+                    <TextBlock Text="{Binding Tuning.Notes[4]}"></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Width="100" Height="50" Margin="15,5,25,5" Command="{Binding ToSixthCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="String 1: "></TextBlock>
+                    <TextBlock Text="{Binding Tuning.Notes[5]}"></TextBlock>
+                </StackPanel>
+            </Button>
         </StackPanel>
         <StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
@@ -21,8 +56,8 @@
                 <TextBlock Text="{Binding FFT}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Tuning: "/>
-                <TextBlock Text="{Binding Tuning}"/>
+                <TextBlock Text="Note: "/>
+                <TextBlock Text="{Binding Note}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Tuner: "/>

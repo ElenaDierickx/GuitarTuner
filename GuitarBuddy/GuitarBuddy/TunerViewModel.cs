@@ -17,17 +17,31 @@ namespace GuitarBuddy
     {
         private int maxRow = 350;
         private int maxColumn = 630;
-        public IRelayCommand ToECommand { get; private set; }
-        public IRelayCommand ToACommand { get; private set; }
-        public IRelayCommand ToDCommand { get; private set; }
-        public IRelayCommand ToGCommand { get; private set; }
-        public IRelayCommand ToBCommand { get; private set; }
-        public IRelayCommand ToeCommand { get; private set; }
+        public IRelayCommand ToFirstCommand { get; private set; }
+        public IRelayCommand ToSecondCommand { get; private set; }
+        public IRelayCommand ToThirdCommand { get; private set; }
+        public IRelayCommand ToFourthCommand { get; private set; }
+        public IRelayCommand ToFifthCommand { get; private set; }
+        public IRelayCommand ToSixthCommand { get; private set; }
 
         public IRelayCommand StopCommand { get; private set; }
 
-        private string tuning;
-        public string Tuning
+        private string note;
+        public string Note
+        {
+            get { return note; }
+            set
+            {
+                if (note != value)
+                {
+                    note = value;
+                    OnPropertyChanged("Note");
+                }
+            }
+        }
+
+        private Tuning tuning;
+        public Tuning Tuning
         {
             get { return tuning; }
             set
@@ -35,7 +49,22 @@ namespace GuitarBuddy
                 if (tuning != value)
                 {
                     tuning = value;
+                    ToFirst();
                     OnPropertyChanged("Tuning");
+                }
+            }
+        }
+
+        private List<Tuning> tunings;
+        public List<Tuning> Tunings
+        {
+            get { return tunings; }
+            set
+            {
+                if (tunings != value)
+                {
+                    tunings = value;
+                    OnPropertyChanged("Tunings");
                 }
             }
         }
@@ -81,14 +110,23 @@ namespace GuitarBuddy
         {
             this.microphone = microphone;
             CreateBitmap();
-            ToECommand = new RelayCommand(ToE);
-            ToACommand = new RelayCommand(ToA);
-            ToDCommand = new RelayCommand(ToD);
-            ToGCommand = new RelayCommand(ToG);
-            ToBCommand = new RelayCommand(ToB);
-            ToeCommand = new RelayCommand(Toe);
+            ToFirstCommand = new RelayCommand(ToFirst);
+            ToSecondCommand = new RelayCommand(ToSecond);
+            ToThirdCommand = new RelayCommand(ToThird);
+            ToFourthCommand = new RelayCommand(ToFourth);
+            ToFifthCommand = new RelayCommand(ToFifth);
+            ToSixthCommand = new RelayCommand(ToSixth);
             StopCommand = new RelayCommand(StopFFT);
-            ToE();
+
+            Tuning RegularTuning = new Tuning("Regular Tuning", new List<string> { "E", "A", "D", "G", "B", "E" }, new List<double> { 82.41, 110.0, 146.83, 196.00, 246.0, 329.63 });
+            Tuning EFlatTuning = new Tuning("E Flat Tuning", new List<string> { "D#", "G#", "C#", "F#", "A#", "D#" }, new List<double> { 77.78, 103.83, 138.59, 185.0, 233.08, 311.13 });
+            Tuning DTuning = new Tuning("Open D Tuning", new List<string> { "D", "A", "D", "F#", "A", "D" }, new List<double> { 73.42, 110.0, 146.83, 185.0, 220.00, 293.66 });
+            Tuning DropDTuning = new Tuning("Drop D Tuning", new List<string> { "D", "A", "D", "G", "B", "E" }, new List<double> { 73.42, 110.0, 146.83, 196.00, 246.0, 329.63 });
+            Tuning OpenGTuning = new Tuning("Open G Tuning", new List<string> { "D", "G", "D", "G", "B", "D" }, new List<double> { 73.42, 98.00, 146.83, 196.00, 246.0, 293.66 });
+            Tunings = new List<Tuning> { RegularTuning, EFlatTuning, DTuning, DropDTuning, OpenGTuning };
+            Tuning = RegularTuning;
+
+            ToFirst();
 
             tokenSource = new CancellationTokenSource();
             Task.Run(GetFFT, tokenSource.Token);
@@ -135,35 +173,38 @@ namespace GuitarBuddy
             BitmapDisplay.WritePixels(rectangle, colorInts, BitmapDisplay.BackBufferStride, 0, 0);
         }
 
-        private void ToE()
+        private void ToFirst()
         {
-            achieveFrequency = 82.41;
-            Tuning = "E";
+            if (Tuning != null)
+            {
+                Note = Tuning.Notes[0];
+                achieveFrequency = Tuning.Frequencies[0];
+            }
         }
-        private void ToA()
+        private void ToSecond()
         {
-            achieveFrequency = 110.0;
-            Tuning = "A";
+            Note = Tuning.Notes[1];
+            achieveFrequency = Tuning.Frequencies[1];
         }
-        private void ToD()
+        private void ToThird()
         {
-            achieveFrequency = 146.83;
-            Tuning = "D";
+            Note = Tuning.Notes[2];
+            achieveFrequency = Tuning.Frequencies[2];
         }
-        private void ToG()
+        private void ToFourth()
         {
-            achieveFrequency = 196.00;
-            Tuning = "G";
+            Note = Tuning.Notes[3];
+            achieveFrequency = Tuning.Frequencies[3];
         }
-        private void ToB()
+        private void ToFifth()
         {
-            achieveFrequency = 246.94;
-            Tuning = "B";
+            Note = Tuning.Notes[4];
+            achieveFrequency = Tuning.Frequencies[4];
         }
-        private void Toe()
+        private void ToSixth()
         {
-            achieveFrequency = 329.63;
-            Tuning = "e";
+            Note = Tuning.Notes[5];
+            achieveFrequency = Tuning.Frequencies[5];
         }
 
         private void CheckFrequency()

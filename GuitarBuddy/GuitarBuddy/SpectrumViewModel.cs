@@ -46,20 +46,6 @@ namespace GuitarBuddy
             }
         }
 
-        private string devcount;
-        public string Devcount
-        {
-            get { return devcount; }
-            set
-            {
-                if (devcount != value)
-                {
-                    devcount = value;
-                    OnPropertyChanged("Devcount");
-                }
-            }
-        }
-
         public WriteableBitmap BitmapDisplay { get; private set; }
 
         public IRelayCommand StopCommand { get; private set; }
@@ -73,7 +59,6 @@ namespace GuitarBuddy
         public SpectrumViewModel(IMicrophone microphone)
         {
             this.microphone = microphone;
-            Devcount = microphone.getDevcount();
             CreateBitmap();
             StopCommand = new RelayCommand(StopTask);
             rectangle = new Int32Rect(0, 0, maxColumn, maxRow);
