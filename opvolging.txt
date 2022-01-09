@@ -132,35 +132,48 @@ Johan
 
 
 =================================================================================
-Eindrapportering - 08/01/2022
+Eindrapportering - 09/01/2022
 =================================================================================
 
 
 Eindrapportering:
 
-<Geef hier een eindstand van wat je bereikt hebt (en wat niet).
-Hierin verwijs je ook naar eventuele bijkomende documenten of informatie om dit te onderbouwen.>
+Bereikt:
+
+	- Een gitaarstemmer, met deze stemmer is het mogelijk om de gitaar te stemming in verschillende tunings.
+	- Noten herkenner, als er een noot gespeeld wordt op de gitaar (of eender welk instrument, met de stem) gaat die hier weergegeven worden.
+	- Frequentiespectrum: Hierop kan je het frequentiespectrum zien van het binnenkomende signaal. De x-as geeft de frequentie weer en de y-as de amplitude.
+	  Deze zijn allemaal te vinden in de GitaarBuddy solution.
+
+Niet bereikt:
+
+	- Het is geen spel geworden met een level editer en online mogelijkheden.
 
 Reflectie:
 
-<Geef hier een reflectie over je aanpak, je originele einddoelen, en je resultaat: Wat was goed?
- Wat had beter gekund? Waren er alternatieven voor je aanpak? Wat zou je achteraf gezien anders
- gedaan hebben? Hoe zou je je nog verder kunnen profileren in de richting van je onderwerp? >
+    	Na het vinden van de fundamentele frequentie kon ik hiermee ook veel doen. Met de fundamentele frequentie was er weer veel om met te experimenteren.
+	Hiermee is het dan ook gelukt om de stemmer en noten herkenner te maken. Dit ging al veel vlotter dan voor de tussenrapportering. Ik heb me ook niet meer gefocust op dingen die mis liepen
+	en dus zo sneller andere oplossingen gevonden. 
 
 
 Inhoud Portfolio:
 
-<Geef hier een overzicht van de informatie die je portfolio bevat> 
+	- Youtube video voorstelling project: https://www.youtube.com/watch?v=YEplVZQ40Gc
 
 
 Bronnenlijst:
 
-<Geef hier een lijst van gebruikte bronnen volgens de IEEE-standaard>
+	- Harden, S., 2017. Realtime Microphone Audio FFT Graph with C#. [online] Youtube.com. Available at: <https://www.youtube.com/watch?v=q9cRZuosrOs>.
+	- Wang, J. and Chang, K., 2011. Fast Fourier Transform Guitar Tuner. [online] Fftguitartuner.files.wordpress.com. Available at: <https://fftguitartuner.files.wordpress.com/2011/03/ee113d-final-report2.pdf> [Accessed 9 January 2022].
+
 
 Zelfevaluatie:
 
-<Geef jezelf hier een score (gaande van 'NVT' tot 'A') voor de items die in het 
-evaluatiedocument een witte achtergrond hebben>
+      - nieuw verworven kennis: B
+    	- toepassing aangetoond: D
+    	- planning: E
+    	- initiatief - inzet: C
+    	- rapportering: C
 
 
 

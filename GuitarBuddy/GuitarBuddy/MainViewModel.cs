@@ -16,6 +16,36 @@ namespace GuitarBuddy
         public IRelayCommand ToSpectrumCommand { get; private set; }
         public IRelayCommand ToNotesCommand { get; private set; }
 
+        private string device;
+        public string Device
+        {
+            get { return device; }
+            set
+            {
+                if (device != value)
+                {
+                    device = value;
+                    OnPropertyChanged("Device");
+                    ChangeDevice();
+                }
+            }
+        }
+
+        private List<string> devices;
+        public List<string> Devices
+        {
+            get { return devices; }
+            set
+            {
+                if (devices != value)
+                {
+                    devices = value;
+
+                    OnPropertyChanged("Devices");
+                }
+            }
+        }
+
         private readonly IMicrophone microphone;
         public MainViewModel(IMicrophone microphone)
         {
@@ -24,6 +54,23 @@ namespace GuitarBuddy
             ToTunerCommand = new RelayCommand(ToTuner);
             ToSpectrumCommand = new RelayCommand(ToSpectrum);
             ToNotesCommand = new RelayCommand(ToNotes);
+
+            List<string> devices = microphone.GetDevcount();
+
+            Devices = devices;
+            Device = devices[0];
+
+
+        }
+
+        private void ChangeDevice()
+        {
+            if (Device != null)
+            {
+                int index = Devices.FindIndex(a => a.Contains(Device));
+                microphone.ChangeDevice(index);
+            }
+            
         }
 
         private void ToTuner()

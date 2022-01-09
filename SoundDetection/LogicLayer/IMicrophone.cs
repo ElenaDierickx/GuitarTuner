@@ -9,7 +9,8 @@ namespace LogicLayer
 {
     public interface IMicrophone
     {
-        public string getDevcount();
-        public double[] getFrequency();
+        public List<string> GetDevcount();
+        public double[] GetFrequency();
+        public void ChangeDevice(int deviceIndex);
     }
 }

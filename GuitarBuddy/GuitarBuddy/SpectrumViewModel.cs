@@ -95,7 +95,7 @@ namespace GuitarBuddy
             CancellationToken ct = tokenSource.Token;
             while (!ct.IsCancellationRequested)
             {
-                double[] fftArray = microphone.getFrequency();
+                double[] fftArray = microphone.GetFrequency();
                 fftArray = fftArray.Take(fftArray.Length / 2).ToArray();
                 double max = fftArray.Max();
                 int previous = 0;

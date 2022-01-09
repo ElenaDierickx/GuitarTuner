@@ -229,7 +229,7 @@ namespace GuitarBuddy
             while (!ct.IsCancellationRequested)
             {
 
-                double[] fftArray = microphone.getFrequency();
+                double[] fftArray = microphone.GetFrequency();
                 double max = fftArray.Max();
                 if (max != 0)
                 {

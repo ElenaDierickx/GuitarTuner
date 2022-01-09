@@ -32,7 +32,7 @@ namespace LogicLayer
         {
             devcount = WaveIn.DeviceCount;
 
-            WaveIn wi = new WaveIn();
+            wi = new WaveIn();
             wi.DeviceNumber = 0;
             wi.WaveFormat = new WaveFormat(RATE, 1);
 
@@ -49,12 +49,35 @@ namespace LogicLayer
             bwp.AddSamples(e.Buffer, 0, e.BytesRecorded);
         }
 
-        public string getDevcount()
+        public void ChangeDevice(int deviceIndex)
         {
-            return devcount.ToString();
+            wi.Dispose();
+            wi = new WaveIn();
+            wi.DeviceNumber = deviceIndex;
+            wi.WaveFormat = new WaveFormat(RATE, 1);
+
+            wi.DataAvailable += new EventHandler<WaveInEventArgs>(wi_DataAvailable);
+            bwp = new BufferedWaveProvider(wi.WaveFormat);
+            bwp.BufferLength = BUFFERSIZE * 2;
+
+            bwp.DiscardOnBufferOverflow = true;
+            wi.StartRecording();
         }
 
-        public double[] getFrequency()
+        public List<string> GetDevcount()
+        {
+            int waveInDevices = WaveIn.DeviceCount;
+            List <string> devices = new List<string>();
+            for (int waveInDevice = 0; waveInDevice < waveInDevices; waveInDevice++)
+            {
+                WaveInCapabilities deviceInfo = WaveIn.GetCapabilities(waveInDevice);
+                devices.Add(deviceInfo.ProductName);
+            }
+            return devices;
+
+        }
+
+        public double[] GetFrequency()
         {
             // read the bytes from the stream
             int frameSize = BUFFERSIZE;
